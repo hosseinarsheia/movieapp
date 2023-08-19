@@ -1,13 +1,20 @@
-import React from 'react';
+import React from 'react'
+import {SafeAreaView, Text} from 'react-native'
+import {enableScreens} from 'react-native-screens'
+import {GestureHandlerRootView} from 'react-native-gesture-handler'
+import {Button} from 'react-native-paper'
 
-import { SafeAreaView, Text } from 'react-native';
+enableScreens(false)
 
 function App(): JSX.Element {
   return (
-    <SafeAreaView>
-      <Text>Hello</Text>
-    </SafeAreaView>
-  );
+    <GestureHandlerRootView style={{flex: 1}}>
+      <SafeAreaView>
+        <Text>Hello</Text>
+        <Button icon="account">Press messs</Button>
+      </SafeAreaView>
+    </GestureHandlerRootView>
+  )
 }
 
-export default App;
+export default App
