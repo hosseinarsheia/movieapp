@@ -3,7 +3,7 @@ import {MyScreenContainer, MyText} from '../../components';
 function LoginScreen() {
   return (
     <MyScreenContainer>
-      <MyText fontSize={25} fontFamily="regular">
+      <MyText fontSize={25} fontFamily="semiBold">
         hellow world
       </MyText>
     </MyScreenContainer>
