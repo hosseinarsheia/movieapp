@@ -8,13 +8,20 @@
     "airbnb-typescript",
     "airbnb/hooks",
     "plugin:@typescript-eslint/recommended",
-    "plugin:@typescript-eslint/recommended-requiring-type-checking"
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "prettier"
   ],
   "overrides": [],
   "parserOptions": {
     "project": "tsconfig.json"
   },
+  "plugins": ["react", "react-hooks", "@typescript-eslint", "prettier"],
+
   "rules": {
-    "import/extensions":"never"
+    "prettier/prettier": "error",
+    "react/jsx-filename-extension": [1, {"extensions": [".tsx"]}],
+    "import/prefer-default-export": "off",
+    "react/require-default-props": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off"
   }
 }
