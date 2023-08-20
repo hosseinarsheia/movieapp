@@ -8,7 +8,7 @@ type FontFamily = 'extraLight' | 'light' | 'regular' | 'medium' | 'semiBold' | '
 type MyTextProps = TextProps & {
   style?: TextStyle;
   fontSize?: number;
-  color?: 'black';
+  color?: string;
   fontFamily?: FontFamily;
   lineHeight?: number;
 };

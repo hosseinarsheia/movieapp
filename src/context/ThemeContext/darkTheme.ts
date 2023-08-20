@@ -4,5 +4,6 @@ export const darkTheme = {
   ...MD3DarkTheme,
   colors: {
     ...MD3DarkTheme.colors,
+    primary: '#3544C4',
   },
 };

@@ -18,18 +18,6 @@
   "plugins": ["react", "react-hooks", "@typescript-eslint", "prettier"],
 
   "rules": {
-    "react-native/no-inline-styles": 0,
-    "react/jsx-props-no-spreading": [
-      "error",
-      {
-        "exceptions": [
-          {
-            "property": "src/components"
-          }
-        ]
-      }
-    ],
-
     "react/jsx-filename-extension": [1, {"extensions": [".tsx"]}],
     "import/prefer-default-export": "off",
     "react/require-default-props": "off",
