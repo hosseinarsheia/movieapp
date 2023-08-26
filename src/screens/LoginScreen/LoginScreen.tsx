@@ -1,5 +1,6 @@
 import React, {useMemo} from 'react';
 import {Divider} from 'react-native-paper';
+
 import {MyButton, MyScreenContainer, MyText} from '../../components';
 import {useTheme} from '../../context/ThemeContext/ThemeContext';
 import {createdStyle} from './styles';
@@ -7,6 +8,7 @@ import {createdStyle} from './styles';
 function LoginScreen() {
   const {theme} = useTheme();
   const styles = useMemo(() => createdStyle(theme), [theme]);
+
   return (
     <MyScreenContainer contentContainerStyle={styles.contentContainerStyle}>
       <MyText fontSize={25} fontFamily="semiBold" color={theme.colors.darkPurple}>

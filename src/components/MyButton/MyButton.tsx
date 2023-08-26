@@ -17,6 +17,7 @@ function MyButton({
   children,
   labelFontSize = R.fontSize.fs18,
   style,
+  ...props
 }: MyButtonProps) {
   return (
     <View style={styles.buttonContainer}>
@@ -31,7 +32,9 @@ function MyButton({
             lineHeight: labelFontSize * 1.5,
           },
           labelStyle,
-        ]}>
+        ]}
+        // eslint-disable-next-line react/jsx-props-no-spreading
+        {...props}>
         {children}
       </Button>
     </View>
