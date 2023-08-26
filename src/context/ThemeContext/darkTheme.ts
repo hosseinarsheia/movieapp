@@ -13,6 +13,16 @@ export const darkTheme = {
     darkGrey: '#707070',
     lightGrey: '#F5F6F7',
 
+    grey900: '#707070',
+    grey800: '#808080',
+    grey700: '#909090',
+    grey600: '#A0A0A0',
+    grey500: '#B0B0B0',
+    grey400: '#C0C0C0',
+    grey300: '#D0D0D0',
+    grey200: '#E0E0E0',
+    grey100: '#F0F0F0',
+
     textDarkGrey: '#707070',
   },
 };

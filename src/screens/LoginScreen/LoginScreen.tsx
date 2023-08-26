@@ -1,4 +1,5 @@
 import React, {useMemo} from 'react';
+import {Divider} from 'react-native-paper';
 import {MyButton, MyScreenContainer, MyText} from '../../components';
 import {useTheme} from '../../context/ThemeContext/ThemeContext';
 import {createdStyle} from './styles';
@@ -20,6 +21,9 @@ function LoginScreen() {
       <MyButton labelStyle={{color: theme.colors.lightPurple}} style={styles.signUp}>
         Sign Up
       </MyButton>
+
+      <Divider style={styles.divider} bold />
+      <MyButton style={styles.facebookButton}>Sign in with Facebook</MyButton>
     </MyScreenContainer>
   );
 }
