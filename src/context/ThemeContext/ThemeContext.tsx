@@ -4,9 +4,11 @@ import {Provider as PaperProvider} from 'react-native-paper';
 import {lightTheme} from './lightTheme';
 import {darkTheme} from './darkTheme';
 
+export type ThemeStyleType = ThemeContextValue['theme'];
+
 type ThemeType = 'dark' | 'light';
 
-interface ThemeContextValue {
+export interface ThemeContextValue {
   theme: typeof lightTheme | typeof darkTheme;
   themeType: ThemeType;
   isDarkTheme: boolean;

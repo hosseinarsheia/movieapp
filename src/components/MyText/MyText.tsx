@@ -1,17 +1,17 @@
 import React, {PropsWithChildren, memo, useMemo} from 'react';
-import {StyleSheet, Text, TextProps, TextStyle} from 'react-native';
+import {Text, TextProps, TextStyle} from 'react-native';
 import {moderateScale} from 'react-native-size-matters';
 import R from '../../res/R';
 
 type FontFamily = 'extraLight' | 'light' | 'regular' | 'medium' | 'semiBold' | 'bold';
 
-type MyTextProps = TextProps & {
+interface MyTextProps extends TextProps {
   style?: TextStyle;
   fontSize?: number;
   color?: string;
   fontFamily?: FontFamily;
   lineHeight?: number;
-};
+}
 
 function MyText({
   style,
@@ -22,7 +22,7 @@ function MyText({
   children,
   ...props
 }: PropsWithChildren<MyTextProps>) {
-  const fontFamilyValue = useMemo(() => {
+  const fontFamilyValue: string = useMemo(() => {
     switch (fontFamily) {
       case 'extraLight':
         return R.fontFamily.extraLight;
@@ -51,13 +51,14 @@ function MyText({
       allowFontScaling={false}
       style={[
         {
-          color: color,
+          color,
           fontFamily: fontFamilyValue,
           fontSize: Math.floor(moderateScale(fontSize)),
           lineHeight: lineHeight || Math.floor(moderateScale(fontSize)) * 1.5,
         },
         style,
       ]}
+      // eslint-disable-next-line react/jsx-props-no-spreading
       {...props}>
       {children}
     </Text>

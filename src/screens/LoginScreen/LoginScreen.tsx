@@ -1,16 +1,25 @@
-import React from 'react';
+import React, {useMemo} from 'react';
 import {MyButton, MyScreenContainer, MyText} from '../../components';
 import {useTheme} from '../../context/ThemeContext/ThemeContext';
+import {createdStyle} from './styles';
 
 function LoginScreen() {
   const {theme} = useTheme();
+  const styles = useMemo(() => createdStyle(theme), [theme]);
   return (
-    <MyScreenContainer>
-      <MyText fontSize={25} fontFamily="semiBold" color={theme.colors.primary}>
-        ssss
+    <MyScreenContainer contentContainerStyle={styles.contentContainerStyle}>
+      <MyText fontSize={25} fontFamily="semiBold" color={theme.colors.darkPurple}>
+        PRANDANA
       </MyText>
 
-      <MyButton>Sign in</MyButton>
+      <MyText fontSize={16} color={theme.colors.textDarkGrey} style={styles.descText}>
+        By creating an account you get access to an unlimited number of exercises
+      </MyText>
+
+      <MyButton style={styles.signIn}>Sign in</MyButton>
+      <MyButton labelStyle={{color: theme.colors.lightPurple}} style={styles.signUp}>
+        Sign Up
+      </MyButton>
     </MyScreenContainer>
   );
 }
