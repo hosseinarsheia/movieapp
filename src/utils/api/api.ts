@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios, {AxiosRequestConfig} from 'axios';
 import {API_ACCESS_TOKEN, URL} from '@env';
 
 export const configureInterceptor = async () => {
@@ -30,7 +30,7 @@ const fetchUrl = (
   method: string,
   endpoint: string,
   data: null | object = null,
-  options: null | object = null,
+  options?: AxiosRequestConfig,
 ) => {
   let optionObject = {
     method,
@@ -45,16 +45,16 @@ const fetchUrl = (
 };
 
 const api = {
-  get(endpoint: string) {
-    return fetchUrl('GET', endpoint);
+  get(endpoint: string, options?: AxiosRequestConfig) {
+    return fetchUrl('GET', endpoint, null, options);
   },
-  post(endpoint: string, data: object, options: object) {
+  post(endpoint: string, data: object, options: AxiosRequestConfig) {
     return fetchUrl('post', endpoint, data, options);
   },
-  put(endpoint: string, data: object, options: object) {
+  put(endpoint: string, data: object, options: AxiosRequestConfig) {
     return fetchUrl('put', endpoint, data, options);
   },
-  patch(endpoint: string, data: object, options: object) {
+  patch(endpoint: string, data: object, options: AxiosRequestConfig) {
     return fetchUrl('patch', endpoint, data, options);
   },
   delete(endpoint: string, data: object) {
